@@ -1,0 +1,36 @@
+@import "variables";
+@import "mixins";
+
+.login-container {
+  width: $width-80;
+  @include mx500;
+
+  .game-title {
+    font-size: 3em;
+    text-align: center;
+    padding-bottom: 20px;
+  }
+
+  .ant-tabs-nav {
+    display: flex;
+
+    > div {
+      display: flex;
+      flex: 1;
+
+      .ant-tabs-tab {
+        flex: 1;
+        text-align: center;
+
+        &.ant-tabs-tab-active,
+        &:hover {
+          color: $tab-color;
+        }
+      }
+    }
+
+    .ant-tabs-ink-bar {
+      background-color: $tab-color;
+    }
+  }
+}

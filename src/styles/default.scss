@@ -1,0 +1,33 @@
+@import "variables";
+@import "mixins";
+
+@import url("https://fonts.googleapis.com/css?family=Indie+Flower&display=swap");
+
+html,
+body {
+  height: 100%;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  background-color: $bg-color;
+  color: $text-color;
+}
+
+#root {
+  @include flex;
+}
+
+.basic-container {
+  @include flex;
+}
+
+.row-padding-centralized-container {
+  @include flex;
+  flex-direction: row;
+  justify-content: center;
+  padding: 20px;
+}
+
+@include gameTitle;
+@include primaryButton;

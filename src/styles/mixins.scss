@@ -1,0 +1,31 @@
+@import "variables";
+
+@mixin flex {
+  display: flex;
+  flex: 1;
+}
+
+@mixin mx400 {
+  max-width: 400px;
+}
+
+@mixin mx500 {
+  max-width: 500px;
+}
+
+@mixin mx800 {
+  max-width: 800px;
+}
+
+@mixin gameTitle {
+  .game-title {
+    font-family: "Indie Flower";
+  }
+}
+
+@mixin primaryButton {
+  .custom-primary-button {
+    background-color: $custom-primary-button-bg;
+    border-color: $custom-primary-button-bg;
+  }
+}
