@@ -1,0 +1,6 @@
+@import "../../styles/mixins.scss";
+
+.cards-panel {
+  @include flex;
+  flex-wrap: wrap;
+}

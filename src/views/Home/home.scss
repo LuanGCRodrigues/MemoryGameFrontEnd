@@ -1,0 +1,25 @@
+@import "../../styles/mixins.scss";
+
+.home-container {
+  @include flex;
+  flex-direction: column;
+}
+
+.header-container {
+  height: 60px;
+  max-height: 60px;
+  background-color: #003844;
+  @include flex;
+  box-shadow: 0 0px 3px 1px #013b48;
+}
+
+.main-container {
+  padding: 20px;
+  @include flex;
+}
+
+.game-container {
+  @include flex;
+  border: 1px solid #013b48;
+  border-radius: 4px;
+}

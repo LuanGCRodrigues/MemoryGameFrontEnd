@@ -6,7 +6,7 @@ import "antd/dist/antd.css";
 import "./styles/default.scss";
 
 import Login from "./views/Login";
-import Game from "./views/Game";
+import Home from "./views/Home";
 import NotFound from "./views/NotFound";
 
 ReactDOM.render(
@@ -15,7 +15,7 @@ ReactDOM.render(
       <Switch>
         <Route exact path="/" component={Login} />
         <Route path="/Login" component={Login} />
-        <Route path="/Game" component={Game} />
+        <Route path="/Home" component={Home} />
         <Route component={NotFound} />
       </Switch>
     </div>

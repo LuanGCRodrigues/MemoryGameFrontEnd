@@ -1,10 +1,10 @@
 import React, { useState } from "react";
 
 import { Card } from "antd";
-import SignInForm from "./Login/SignIn/index";
-import SignUpForm from "./Login/SignUp";
+import SignInForm from "./SignIn";
+import SignUpForm from "./SignUp";
 
-import "../styles/login.scss";
+import "./login.scss";
 
 export default function Login() {
   const [tabKey, setTabKey] = useState("signin");
