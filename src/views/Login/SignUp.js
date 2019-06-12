@@ -1,14 +1,37 @@
 import React from "react";
 import { Form, Icon, Input, Button } from "antd";
+import { useStateValue } from "../../providers/StateProvider";
+import { withRouter } from "react-router-dom";
+
+import API from "../../services/api";
 
 function SignUp(props) {
   const { getFieldDecorator, validateFields } = props.form;
+  const { history } = props;
+
+  const [{ data }, dispatch] = useStateValue();
 
   const handleSubmit = e => {
     e.preventDefault();
     validateFields((err, values) => {
       if (!err) {
-        console.log("Received values of form: ", values);
+        API.post("user", values)
+          .then(response => {
+            if (response && response.data && response.data.fail) {
+              alert(response.data.errorMessage);
+            } else if (response.data.result) {
+              dispatch({
+                type: "login",
+                newUser: response.data.result
+              });
+              history.push("/home");
+            }
+          })
+          .catch(error => {
+            if (error.response && error.response.data) {
+              alert(error.response.data);
+            }
+          });
       }
     });
   };
@@ -56,4 +79,4 @@ function SignUp(props) {
 
 const SignUpForm = Form.create({ name: "signup" })(SignUp);
 
-export default SignUpForm;
+export default withRouter(SignUpForm);
